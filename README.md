@@ -12,7 +12,7 @@ The portfolio is designed to support applications for **graduate and experienced
 
 ## 🚀 Tech Stack
 
-- **Frontend:** React, JavaScript, HTML5, CSS3  
+- **Frontend:** React, TypeScript, HTML5, CSS3  
 - **Styling:** Tailwind CSS / CSS Modules  
 - **Deployment:** Vercel  
 - **Version Control:** Git & GitHub
