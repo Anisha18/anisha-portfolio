@@ -59,6 +59,23 @@ export default function Contact() {
             View profile →
           </span>
         </a>
+
+        {/* Resume */}
+        <a
+            href="/Anisha_Dsouza_Resume.pdf"
+            download
+            className="group relative rounded-2xl border border-indigo-500/30 bg-indigo-50 p-8 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-indigo-400/30 dark:bg-indigo-900/20"
+        >
+            <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br from-indigo-500/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+            <h3 className="text-xl font-semibold">Resume</h3>
+            <p className="mt-3 text-sm text-gray-600 dark:text-gray-400">
+            Download my latest CV (PDF)
+            </p>
+            <span className="mt-4 inline-block font-medium text-indigo-600 dark:text-indigo-400">
+            Download →
+            </span>
+        </a>
       </div>
     </section>
   );
