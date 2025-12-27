@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar.tsx";
 import Hero from "./components/Hero.tsx";
 import Projects from "./components/Projects.tsx";
+import Experience from "./components/Experience.tsx";
 
 function App() {
   const [theme, setTheme] = useState<"light" | "dark">("dark");
@@ -31,6 +32,7 @@ function App() {
       <Navbar theme={theme} toggleTheme={toggleTheme} />
       <Hero />
       <Projects />
+      <Experience />
     </div>
   );
 }

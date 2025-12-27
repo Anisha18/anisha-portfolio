@@ -8,12 +8,11 @@ const projects = [
       "Implemented secure user authentication and subscription workflows for ~2,000 concurrent users",
       "Built scalable REST APIs serving 50,000+ requests/month with <200ms average response time",
     ],
-    tech: ["AWS", "Node.js", "DynamoDB", "Lambda", "API Gateway", "S3"],
-    github: "https://github.com/Anisha18",
-    live: "#",
+    tech: ["Flask", "AWS", "Docker", "DynamoDB", "Lambda", "API Gateway", "S3"],
+    github: "https://github.com/Anisha18/CloudApp",
   },
   {
-    title: "Aviation Academy LMS – Backend & File Processing System",
+    title: "Aviation Academy LMS – Flight School Dashboard",
     featured: true,
     description:
         "Developed backend services for a Learning Management System used by flight schools to manage students, courses, and progress analytics.",
@@ -23,9 +22,8 @@ const projects = [
         "Enabled document previews using MinIO, LibreOffice, and Poppler",
         "Served as Scrum Master overseeing sprint planning, reviews, and delivery",
     ],
-    tech: ["Node.js", "Express", "MongoDB", "MinIO", "REST APIs"],
-    github: "https://github.com/Anisha18",
-    live: "#",
+    tech: ["Node.js", "Express.js", "React", "MongoDB", "MinIO", "REST APIs", "Jest", "LibreOffice", "Poppler"],
+    github: "https://github.com/Anisha18/Flight-School-Dashboard",
   },
   {
     title: "Enterprise ETL & Analytics Pipelines – Databricks",
@@ -36,9 +34,7 @@ const projects = [
       "Built metadata-driven pipelines for 20+ data sources ensuring accuracy and governance",
       "Delivered optimized reporting datasets consumed by 50+ analysts and dashboards",
     ],
-    tech: ["Databricks", "SparkSQL", "PySpark", "SQL", "Delta Lake"],
-    github: "https://github.com/Anisha18",
-    live: "#",
+    tech: ["Databricks", "SparkSQL", "PySpark", "Hive", "Delta Lake", "ETL/ELT Pipelines"],
   },
   {
     title: "Myki Ticketing System – Database Design & Security",
@@ -50,8 +46,6 @@ const projects = [
       "Optimized queries reducing average fare transaction response from 300ms → 50ms",
     ],
     tech: ["SQL", "Database Design", "Security", "Data Modelling"],
-    github: "https://github.com/Anisha18",
-    live: "#",
   },
 ];
 
@@ -123,13 +117,6 @@ export default function Projects() {
                 >
                 View Code →
                 </a>
-                <a
-                href={featuredProject.live}
-                target="_blank"
-                className="font-medium text-gray-700 hover:text-gray-900 dark:text-gray-300"
-                >
-                Live Demo →
-                </a>
             </div>
             </div>
         </div>
@@ -174,22 +161,17 @@ export default function Projects() {
             </div>
 
             {/* Links */}
+            {project.github && (
             <div className="mt-6 flex items-center gap-4">
-              <a
+                <a
                 href={project.github}
                 target="_blank"
                 className="text-sm font-medium text-indigo-600 transition-colors hover:text-indigo-500 dark:text-indigo-400"
-              >
+                >
                 GitHub →
-              </a>
-              <a
-                href={project.live}
-                target="_blank"
-                className="text-sm font-medium text-gray-700 transition-colors hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
-              >
-                Live Demo →
-              </a>
+                </a>
             </div>
+            )}
           </div>
         ))}
       </div>
