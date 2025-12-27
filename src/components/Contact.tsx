@@ -20,7 +20,7 @@ export default function Contact() {
       <div className="mx-auto mt-16 grid max-w-3xl gap-8 sm:grid-cols-2">
         {/* Email */}
         <a
-          href="mailto:anishadsouza2000@gmail.com"
+          href="mailto:anishadsouza2000@gmail.com?subject=Portfolio Inquiry"
           className="group relative rounded-2xl border border-gray-200 bg-white p-8 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-gray-800 dark:bg-gray-900"
         >
           <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br from-indigo-500/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />

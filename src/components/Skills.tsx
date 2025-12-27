@@ -49,10 +49,7 @@ export default function Skills() {
   ];
 
   return (
-    <section
-      id="skills"
-      className="relative mx-auto max-w-7xl px-6 py-24"
-    >
+    <section id="skills" className="relative mx-auto max-w-7xl px-6 py-24">
       {/* Section heading */}
       <div className="mb-16 text-center">
         <h2 className="text-4xl font-bold tracking-tight md:text-5xl">
@@ -69,8 +66,11 @@ export default function Skills() {
         {skillGroups.map((group) => (
           <div
             key={group.title}
-            className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-900"
+            className="group relative rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-gray-800 dark:bg-gray-900"
           >
+            {/* Hover glow */}
+            <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br from-indigo-500/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
             <h3 className="mb-4 text-lg font-semibold">
               {group.title}
             </h3>
@@ -79,7 +79,24 @@ export default function Skills() {
               {group.skills.map((skill) => (
                 <span
                   key={skill}
-                  className="rounded-full bg-gray-100 px-3 py-1 text-sm font-medium text-gray-700 dark:bg-gray-800 dark:text-gray-300"
+                  className="
+                    rounded-full
+                    bg-gray-100
+                    px-3
+                    py-1
+                    text-sm
+                    font-medium
+                    text-gray-700
+                    transition-all
+                    duration-200
+                    hover:scale-105
+                    hover:bg-indigo-100
+                    hover:text-indigo-700
+                    dark:bg-gray-800
+                    dark:text-gray-300
+                    dark:hover:bg-indigo-900/40
+                    dark:hover:text-indigo-300
+                  "
                 >
                   {skill}
                 </span>
