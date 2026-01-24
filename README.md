@@ -3,7 +3,7 @@
 This repository contains my personal portfolio website built using **React**, showcasing my projects, technical skills, and professional experience.  
 The portfolio is designed to support applications for **graduate and experienced software engineering roles**.
 
-🔗 **Live Website:** [anisha-portfolio.vercel.app](https://anisha-portfolio-git-main-anisha18s-projects.vercel.app)  
+🔗 **Live Website:** [anisha-portfolio.vercel.app](https://anisha-portfolio-rose.vercel.app/)  
 📄 **Resume:** Available on the website  
 🔗 **LinkedIn:** https://linkedin.com/in/anishadsouza/  
 🔗 **GitHub:** https://github.com/Anisha18
