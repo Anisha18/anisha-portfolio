@@ -6,7 +6,7 @@ type NavbarProps = {
 export default function Navbar({ theme, toggleTheme }: NavbarProps) {
   return (
     <nav className="flex items-center justify-between px-8 py-4 border-b border-gray-200 dark:border-gray-800">
-      <span className="text-xl font-semibold">Anisha</span>
+      <span className="text-xl font-semibold">Portfolio</span>
 
       <button
         onClick={toggleTheme}
