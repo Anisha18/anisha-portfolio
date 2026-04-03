@@ -1,144 +1,191 @@
+import { useEffect, useRef, useState } from "react";
+
+const experiences = [
+  {
+    role: "Backend Developer",
+    company: "Aviation Academy",
+    period: "Aug 2025 – Oct 2025",
+    location: "Melbourne, AU",
+    tech: ["Node.js", "Express.js", "MongoDB", "MinIO", "REST APIs"],
+  },
+  {
+    role: "Senior Data Engineer",
+    company: "LTIMindtree",
+    period: "Aug 2022 – Sep 2023",
+    location: "India",
+    tech: ["Databricks", "SparkSQL", "PySpark", "Delta Lake"],
+  },
+];
+
 export default function Experience() {
+  const ref = useRef<HTMLDivElement>(null);
+  const lineRef = useRef<HTMLDivElement>(null);
+  const [lineHeight, setLineHeight] = useState(0);
+
+  // Animate the vertical timeline line on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      const section = ref.current;
+      const line = lineRef.current;
+      if (!section || !line) return;
+
+      const rect = section.getBoundingClientRect();
+      const totalH = section.offsetHeight;
+      const scrolled = Math.max(0, -rect.top + window.innerHeight * 0.3);
+      const pct = Math.min(1, scrolled / totalH);
+      setLineHeight(pct * 100);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Fade in cards
+  useEffect(() => {
+    const container = ref.current;
+    if (!container) return;
+    const els = container.querySelectorAll<HTMLElement>(".term-reveal");
+    const observer = new IntersectionObserver(
+      (entries) =>
+        entries.forEach((e) => {
+          if (e.isIntersecting) e.target.classList.add("animate-termFadeIn");
+          else e.target.classList.remove("animate-termFadeIn");
+        }),
+      { threshold: 0.1 }
+    );
+    els.forEach((el, i) => {
+      el.style.animationDelay = `${i * 0.15}s`;
+      observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section
-      id="experience"
-      className="relative mx-auto max-w-7xl px-6 py-24"
-    >
-      {/* Section heading */}
-      <div className="mb-20 text-center">
-        <h2 className="text-4xl font-bold tracking-tight md:text-5xl">
-          Work Experience
+    <section id="experience" ref={ref} className="mx-auto max-w-5xl px-6 py-24 md:px-12">
+      {/* Section header */}
+      <div className="term-reveal opacity-0 mb-12 flex items-center gap-4">
+        <span className="text-xs tracking-widest" style={{ color: "var(--text-dim)" }}>
+          // 03
+        </span>
+        <h2 className="text-2xl font-bold tracking-widest" style={{ color: "var(--green)" }}>
+          EXPERIENCE
         </h2>
-        <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">
-          Professional experience across data engineering, backend systems,
-          and cloud-native applications.
-        </p>
+        <div className="h-px flex-1" style={{ backgroundColor: "var(--bg-border)" }} />
       </div>
 
-      {/* Timeline */}
-      <div className="relative space-y-16">
-        {/* Vertical line */}
-        <div className="absolute left-4 top-0 h-full w-px bg-gray-200 dark:bg-gray-800 md:left-1/2 md:-translate-x-1/2" />
+      {/* Timeline layout */}
+      <div className="relative pl-8 md:pl-12">
 
-        {/* Aviation Academy */}
-        <div className="relative md:flex md:justify-end">
-          {/* Timeline dot */}
-          <span className="absolute left-2 top-8 h-4 w-4 rounded-full bg-indigo-600 md:left-1/2 md:-translate-x-1/2" />
+        {/* Animated vertical line track */}
+        <div
+          className="absolute left-0 top-0 w-px"
+          style={{
+            height: "100%",
+            backgroundColor: "var(--bg-border)",
+          }}
+        />
+        {/* Filled portion — grows on scroll */}
+        <div
+          ref={lineRef}
+          className="absolute left-0 top-0 w-px transition-none"
+          style={{
+            height: `${lineHeight}%`,
+            background: `linear-gradient(to bottom, var(--green), var(--green-dim))`,
+            boxShadow: "0 0 8px var(--green-glow)",
+          }}
+        />
 
-          <div className="group relative ml-10 max-w-xl rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-gray-800 dark:bg-gray-900 md:ml-0 md:w-1/2 md:pl-12">
-            {/* Glow */}
-            <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br from-indigo-500/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+        {/* Entries */}
+        <div className="space-y-10">
+          {experiences.map((exp, i) => (
+            <div key={i} className="term-reveal relative opacity-0">
+              {/* Timeline dot */}
+              <div
+                className="absolute -left-8 top-5 flex h-4 w-4 items-center justify-center rounded-full md:-left-12"
+                style={{
+                  backgroundColor: "var(--bg)",
+                  border: "2px solid var(--green)",
+                  boxShadow: "0 0 10px var(--green-glow)",
+                  transform: "translateX(-50%)",
+                }}
+              >
+                <div
+                  className="h-1.5 w-1.5 rounded-full"
+                  style={{ backgroundColor: "var(--green)" }}
+                />
+              </div>
 
-            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-              <h3 className="text-xl font-semibold">
-                Backend Developer · Aviation Academy
-              </h3>
-              <span className="text-sm text-gray-500 dark:text-gray-400">
-                Aug 2025 – Oct 2025 · Melbourne
-              </span>
+              {/* Card */}
+              <div
+                className="rounded p-6 transition-all duration-200"
+                style={{
+                  backgroundColor: "var(--bg-surface)",
+                  border: "1px solid var(--bg-border)",
+                }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.borderColor = "var(--green-dim)";
+                  (e.currentTarget as HTMLElement).style.boxShadow = "0 0 18px var(--green-glow)";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.borderColor = "var(--bg-border)";
+                  (e.currentTarget as HTMLElement).style.boxShadow = "none";
+                }}
+              >
+                {/* Period badge */}
+                <p className="mb-3 text-xs tracking-widest" style={{ color: "var(--green)" }}>
+                  ▶ {exp.period}
+                </p>
+
+                <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+                  <div>
+                    <h3
+                      className="text-base font-bold tracking-tight"
+                      style={{ color: "var(--text)" }}
+                    >
+                      {exp.role}
+                    </h3>
+                    <p
+                      className="mt-0.5 text-sm font-medium"
+                      style={{ color: "var(--text-dim)" }}
+                    >
+                      {exp.company} · {exp.location}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {exp.tech.map((t) => (
+                    <span
+                      key={t}
+                      className="rounded px-2 py-0.5 text-xs"
+                      style={{
+                        backgroundColor: "var(--bg)",
+                        border: "1px solid var(--bg-border)",
+                        color: "var(--text-dim)",
+                      }}
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
+          ))}
 
-            <ul className="mt-4 space-y-3 text-sm text-gray-600 dark:text-gray-400">
-              <li>
-                • Developed backend services for a full-stack LMS used by flight
-                schools to manage students, courses, and analytics.
-              </li>
-              <li>
-                • Built REST APIs with Node.js and Express backed by MongoDB,
-                supporting nested course structures.
-              </li>
-              <li>
-                • Implemented file-processing pipelines for PPT, PDF, and MP4
-                uploads with automated conversion and previews.
-              </li>
-              <li>
-                • Integrated MinIO, LibreOffice, and Poppler for document
-                transformation workflows.
-              </li>
-              <li>
-                • Served as Scrum Master, leading sprint planning, standups,
-                reviews, and delivery.
-              </li>
-            </ul>
-
-            <div className="mt-5 flex flex-wrap gap-2">
-              {[
-                "Node.js",
-                "Express.js",
-                "MongoDB",
-                "MinIO",
-                "REST APIs",
-                "Scrum",
-              ].map((tech) => (
-                <span
-                  key={tech}
-                  className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-700 dark:bg-gray-800 dark:text-gray-300"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* LTIMindtree */}
-        <div className="relative md:flex md:justify-start">
-          {/* Timeline dot */}
-          <span className="absolute left-2 top-8 h-4 w-4 rounded-full bg-indigo-600 md:left-1/2 md:-translate-x-1/2" />
-
-          <div className="group relative ml-10 max-w-xl rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-gray-800 dark:bg-gray-900 md:ml-0 md:w-1/2 md:pr-12">
-            {/* Glow */}
-            <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br from-indigo-500/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-
-            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-              <h3 className="text-xl font-semibold">
-                Senior Data Engineer · LTIMindtree
-              </h3>
-              <span className="text-sm text-gray-500 dark:text-gray-400">
-                Aug 2022 – Sep 2023 · India
-              </span>
-            </div>
-
-            <ul className="mt-4 space-y-3 text-sm text-gray-600 dark:text-gray-400">
-              <li>
-                • Designed and maintained enterprise ETL/ELT pipelines
-                integrating Salesforce and revenue data.
-              </li>
-              <li>
-                • Processed 2M+ records/day using Databricks, SparkSQL, and
-                PySpark with significant runtime optimisation.
-              </li>
-              <li>
-                • Optimised complex SQL transformations for analytics and
-                reporting workloads.
-              </li>
-              <li>
-                • Built metadata-driven workflows ensuring governance and
-                version control.
-              </li>
-              <li>
-                • Partnered with analysts and stakeholders to deliver
-                production-grade data models.
-              </li>
-            </ul>
-
-            <div className="mt-5 flex flex-wrap gap-2">
-              {[
-                "Databricks",
-                "SparkSQL",
-                "PySpark",
-                "SQL",
-                "Delta Lake",
-                "ETL/ELT",
-              ].map((tech) => (
-                <span
-                  key={tech}
-                  className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-700 dark:bg-gray-800 dark:text-gray-300"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
+          {/* End cap */}
+          <div className="relative flex items-center gap-3 pl-0">
+            <div
+              className="absolute -left-8 flex h-3 w-3 items-center justify-center rounded-full md:-left-12"
+              style={{
+                backgroundColor: "var(--bg-border)",
+                border: "1px solid var(--bg-border)",
+                transform: "translateX(-50%)",
+              }}
+            />
+            <p className="text-xs tracking-widest" style={{ color: "var(--text-dim)" }}>
+              — more to come
+            </p>
           </div>
         </div>
       </div>

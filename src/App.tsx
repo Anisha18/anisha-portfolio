@@ -7,36 +7,32 @@ import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 
 function App() {
-  const [theme, setTheme] = useState<"light" | "dark">("dark");
+  const [theme, setTheme] = useState<"dark" | "light">("dark");
 
   useEffect(() => {
-    const storedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
-
-    if (storedTheme) {
-      setTheme(storedTheme);
-      document.documentElement.classList.toggle("dark", storedTheme === "dark");
-    } else {
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      setTheme(prefersDark ? "dark" : "light");
-      document.documentElement.classList.toggle("dark", prefersDark);
-    }
+    const stored = localStorage.getItem("theme") as "dark" | "light" | null;
+    const resolved = stored ?? "dark";
+    setTheme(resolved);
+    document.documentElement.classList.toggle("light", resolved === "light");
   }, []);
 
   const toggleTheme = () => {
-    const newTheme = theme === "dark" ? "light" : "dark";
-    setTheme(newTheme);
-    document.documentElement.classList.toggle("dark", newTheme === "dark");
-    localStorage.setItem("theme", newTheme);
+    const next = theme === "dark" ? "light" : "dark";
+    setTheme(next);
+    document.documentElement.classList.toggle("light", next === "light");
+    localStorage.setItem("theme", next);
   };
 
   return (
-    <div className="min-h-screen bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100">
+    <div className="relative min-h-screen">
       <Navbar theme={theme} toggleTheme={toggleTheme} />
-      <Hero />
-      <Projects />
-      <Experience />
-      <Skills />
-      <Contact />
+      <main>
+        <Hero />
+        <Projects />
+        <Experience />
+        <Skills />
+        <Contact />
+      </main>
     </div>
   );
 }
