@@ -133,7 +133,7 @@ export default function Contact() {
           color: "var(--text-dim)",
         }}
       >
-        <span style={{ color: "var(--green)" }}>~/anisha</span> · built with React &amp; TypeScript · {new Date().getFullYear()}
+        <span style={{ color: "var(--text-dim)" }}>© {new Date().getFullYear()} Anisha Dsouza · All rights reserved</span>
       </footer>
     </>
   );
