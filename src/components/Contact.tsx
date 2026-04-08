@@ -21,7 +21,7 @@ const links = [
   {
     label: "resume",
     value: "AnishaDsouza.pdf",
-    href: "/AnishaDsouza.pdf",
+    href: "/AnishaDsouza-Portfolio.pdf",
     download: true,
   },
 ];
