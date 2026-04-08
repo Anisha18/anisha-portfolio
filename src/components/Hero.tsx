@@ -71,7 +71,7 @@ export default function Hero() {
           className="term-reveal opacity-0 text-xs tracking-widest"
           style={{ color: "var(--text-dim)" }}
         >
-          <span style={{ color: "var(--green)" }}>▶</span> whoami
+          <span style={{ color: "var(--text-dim)" }}>// 01</span>  <span style={{ color: "var(--green)" }}>▶</span> whoami
         </p>
 
         <h1
@@ -80,7 +80,7 @@ export default function Hero() {
         >
           Anisha
           <br />
-          <span style={{ color: "var(--green)" }}>Dsouza</span>
+          <span style={{ color: "var(--green)" }}>D'souza</span>
         </h1>
 
         <p

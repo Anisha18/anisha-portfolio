@@ -6,6 +6,19 @@ import Experience from "./components/Experience";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 
+
+function Divider() {
+  return (
+    <div className="mx-auto max-w-5xl px-6 md:px-12">
+      <div className="flex items-center gap-4">
+        <div className="h-px flex-1" style={{ backgroundColor: "var(--bg-border)" }} />
+        <span className="text-xs" style={{ color: "var(--bg-border)" }}>✦</span>
+        <div className="h-px flex-1" style={{ backgroundColor: "var(--bg-border)" }} />
+      </div>
+    </div>
+  );
+}
+
 function App() {
   const [theme, setTheme] = useState<"dark" | "light">("dark");
 
@@ -28,9 +41,13 @@ function App() {
       <Navbar theme={theme} toggleTheme={toggleTheme} />
       <main>
         <Hero />
+        <Divider />
         <Projects />
+        <Divider />
         <Experience />
+        <Divider />
         <Skills />
+        <Divider />
         <Contact />
       </main>
     </div>
