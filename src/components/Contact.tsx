@@ -85,7 +85,7 @@ export default function Contact() {
               target={link.external ? "_blank" : undefined}
               rel={link.external ? "noopener noreferrer" : undefined}
               download={link.download}
-              className="term-reveal opacity-0 flex items-center justify-between px-6 py-4 transition-all duration-150 group"
+              className="term-reveal opacity-0 flex flex-col gap-1 px-6 py-4 transition-all duration-150 sm:flex-row sm:items-center sm:justify-between"
               style={{
                 borderBottom:
                   i < links.length - 1 ? "1px solid var(--bg-border)" : "none",
@@ -97,26 +97,25 @@ export default function Contact() {
                 (e.currentTarget as HTMLElement).style.backgroundColor = "transparent";
               }}
             >
-              <div className="flex items-center gap-6">
+              {/* Label + value stacked on mobile, inline on desktop */}
+              <div className="flex items-baseline gap-4">
                 <span
-                  className="w-20 text-xs tracking-widest"
+                  className="shrink-0 w-20 text-xs tracking-widest"
                   style={{ color: "var(--text-dim)" }}
                 >
                   <span style={{ color: "var(--green)" }}>$</span> {link.label}
                 </span>
-                <span className="text-sm" style={{ color: "var(--text)" }}>
+                <span
+                  className="text-sm break-all"
+                  style={{ color: "var(--text)" }}
+                >
                   {link.value}
                 </span>
               </div>
+              {/* Arrow — right-aligned on desktop, left-indented on mobile */}
               <span
-                className="text-xs transition-colors duration-150"
+                className="text-xs ml-24 sm:ml-0"
                 style={{ color: "var(--text-dim)" }}
-                onMouseEnter={(e) =>
-                  ((e.currentTarget as HTMLElement).style.color = "var(--green)")
-                }
-                onMouseLeave={(e) =>
-                  ((e.currentTarget as HTMLElement).style.color = "var(--text-dim)")
-                }
               >
                 {link.download ? "↓ download" : "→ open"}
               </span>
@@ -133,7 +132,7 @@ export default function Contact() {
           color: "var(--text-dim)",
         }}
       >
-        <span style={{ color: "var(--text-dim)" }}>© {new Date().getFullYear()} Anisha Dsouza · All rights reserved</span>
+        <span style={{ color: "var(--text-dim)" }}>© {new Date().getFullYear()} Anisha D'souza · All rights reserved</span>
       </footer>
     </>
   );

@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 const skillGroups = [
   { label: "languages", skills: ["JavaScript", "TypeScript", "Python", "SQL"] },
   { label: "frontend", skills: ["React", "HTML", "CSS", "Tailwind CSS"] },
-  { label: "backend", skills: ["Node.js", "Express.js", "REST APIs", "JWT"] },
+  { label: "backend", skills: ["Node.js", "Express.js", "REST APIs"] },
   { label: "data", skills: ["Databricks", "PySpark", "SparkSQL", "Delta Lake", "ETL/ELT"] },
   { label: "databases", skills: ["MongoDB", "PostgreSQL", "MySQL"] },
   { label: "cloud & devops", skills: ["AWS", "Docker", "CI/CD", "GitHub Actions"] },
