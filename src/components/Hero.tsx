@@ -80,7 +80,7 @@ export default function Hero() {
         >
           Anisha
           <br />
-          <span style={{ color: "var(--green)" }}>D'souza</span>
+          <span style={{ color: "var(--green)" }}>Dsouza</span>
         </h1>
 
         <p
