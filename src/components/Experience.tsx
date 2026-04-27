@@ -19,7 +19,7 @@ const experiences = [
     role: "Senior Data Engineer",
     company: "LTIMindtree",
     period: "Aug 2022 – Sep 2023",
-    location: "India",
+    location: "",
     tech: ["Databricks", "SparkSQL", "PySpark", "Delta Lake"],
   },
 ];
