@@ -2,11 +2,11 @@ import { useEffect, useRef, useState } from "react";
 
 const experiences = [
   {
-    role: "iOS Development Participant",
-    company: "Apple Foundation Program · RMIT University",
-    period: "Apr 2026 – Present",
+    role: "Full Stack iOS Designer & Developer",
+    company: "Apple Foundation Program at RMIT",
+    period: "Apr 2026",
     location: "Melbourne, AU",
-    tech: ["SwiftUI", "iOS Development", "Human-Centred Design", "Agile"],
+    tech: ["SwiftUI", "iOS Development", "Figma", "Human Interface Guidelines", "WatchOS", "CoreML"],
   },
   {
     role: "Backend Developer",
