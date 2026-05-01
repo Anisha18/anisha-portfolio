@@ -4,26 +4,26 @@ const TerminalPreview = ({ id }: { id: string }) => {
   const snippets: Record<string, { lines: { text: string; green?: boolean }[] }> = {
     "01": {
       lines: [
+        { text: "$ xcodebuild -scheme Embera -sdk watchos" },
+        { text: " ✓ Build succeeded · watchOS 11", green: true },
+        { text: "WCSession.sendMessage(payload) → iPhone" },
+        { text: " ✓ HealthKit + WeatherKit signals synced", green: true },
+      ],
+    },
+    "02": {
+      lines: [
         { text: "$ flask run --host=0.0.0.0" },
         { text: " * Running on http://0.0.0.0:5000", green: true },
         { text: "$ docker push 123.dkr.ecr.ap-southeast-2..." },
         { text: " ✓ Deployed · Lambda cold start 120ms", green: true },
       ],
     },
-    "02": {
+    "03": {
       lines: [
         { text: "$ npm run dev" },
         { text: " ✓ Express listening on :3001", green: true },
         { text: "POST /api/courses/upload  200  48ms" },
         { text: " ✓ PDF converted · MinIO preview ready", green: true },
-      ],
-    },
-    "03": {
-      lines: [
-        { text: "%sql SELECT * FROM silver.revenue LIMIT 10" },
-        { text: " 2,048,391 rows · 1.2s · Δ optimised", green: true },
-        { text: 'spark.read.format("delta").load(path)' },
-        { text: " ✓ Pipeline complete · 20 sources merged", green: true },
       ],
     },
     "04": {
@@ -44,7 +44,6 @@ const TerminalPreview = ({ id }: { id: string }) => {
       className="w-full overflow-hidden rounded-sm font-mono text-xs"
       style={{ backgroundColor: "var(--bg)" }}
     >
-      {/* Fake title bar */}
       <div
         className="flex items-center gap-1.5 px-3 py-2"
         style={{ backgroundColor: "var(--bg-border)" }}
@@ -53,7 +52,6 @@ const TerminalPreview = ({ id }: { id: string }) => {
         <span className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: "#febc2e" }} />
         <span className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: "#28c840" }} />
       </div>
-      {/* Code lines */}
       <div className="space-y-1 px-3 py-3">
         {s.lines.map((line, i) => (
           <p
@@ -72,6 +70,14 @@ const TerminalPreview = ({ id }: { id: string }) => {
 const projects = [
   {
     id: "01",
+    title: "Embera",
+    subtitle: "Women's Health · Apple Watch App",
+    tech: ["SwiftUI", "WatchKit", "WatchConnectivity", "HealthKit", "WeatherKit", "Figma"],
+    github: "https://github.com/Anisha18/Embera",
+    featured: true,
+  },
+  {
+    id: "02",
     title: "VibeMusic",
     subtitle: "Cloud-Based Music Subscription Platform",
     tech: ["Flask", "AWS", "Docker", "DynamoDB", "Lambda", "S3"],
@@ -79,18 +85,11 @@ const projects = [
     featured: false,
   },
   {
-    id: "02",
+    id: "03",
     title: "Aviation Academy LMS",
     subtitle: "Flight School Learning Management System",
     tech: ["Node.js", "Express.js", "React", "MongoDB", "MinIO", "Jest"],
     github: "https://github.com/Anisha18/Flight-School-Dashboard",
-    featured: true,
-  },
-  {
-    id: "03",
-    title: "Enterprise ETL Pipelines",
-    subtitle: "Databricks · Analytics & Reporting",
-    tech: ["Databricks", "SparkSQL", "PySpark", "Delta Lake"],
     featured: false,
   },
   {
