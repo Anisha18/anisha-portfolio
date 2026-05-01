@@ -71,7 +71,7 @@ export default function Navbar({ theme, toggleTheme }: NavbarProps) {
         <a
           href="#"
           className="flex items-center gap-2 text-sm font-medium tracking-widest"
-          style={{ color: "var(--green)" }}
+          style={{ color: "var(--cyan)" }}
           onClick={() => setMenuOpen(false)}
         >
           <span style={{ color: "var(--text-dim)" }}>~/</span>
@@ -89,13 +89,13 @@ export default function Navbar({ theme, toggleTheme }: NavbarProps) {
                 <a
                   href={href}
                   className="text-xs tracking-widest transition-colors duration-200"
-                  style={{ color: isActive ? "var(--green)" : "var(--text-dim)" }}
+                  style={{ color: isActive ? "var(--cyan)" : "var(--text-dim)" }}
                   onMouseEnter={(e) =>
-                    ((e.target as HTMLElement).style.color = "var(--green)")
+                    ((e.target as HTMLElement).style.color = "var(--cyan)")
                   }
                   onMouseLeave={(e) =>
                     ((e.target as HTMLElement).style.color = isActive
-                      ? "var(--green)"
+                      ? "var(--cyan)"
                       : "var(--text-dim)")
                   }
                 >
@@ -118,8 +118,8 @@ export default function Navbar({ theme, toggleTheme }: NavbarProps) {
               backgroundColor: "transparent",
             }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.borderColor = "var(--green-dim)";
-              (e.currentTarget as HTMLElement).style.color = "var(--green)";
+              (e.currentTarget as HTMLElement).style.borderColor = "var(--cyan-dim)";
+              (e.currentTarget as HTMLElement).style.color = "var(--cyan)";
             }}
             onMouseLeave={(e) => {
               (e.currentTarget as HTMLElement).style.borderColor = "var(--bg-border)";
@@ -139,21 +139,21 @@ export default function Navbar({ theme, toggleTheme }: NavbarProps) {
             <span
               className="block h-px w-5 transition-all duration-300 origin-center"
               style={{
-                backgroundColor: "var(--green)",
+                backgroundColor: "var(--cyan)",
                 transform: menuOpen ? "translateY(4px) rotate(45deg)" : "none",
               }}
             />
             <span
               className="block h-px w-5 transition-all duration-300"
               style={{
-                backgroundColor: "var(--green)",
+                backgroundColor: "var(--cyan)",
                 opacity: menuOpen ? 0 : 1,
               }}
             />
             <span
               className="block h-px w-5 transition-all duration-300 origin-center"
               style={{
-                backgroundColor: "var(--green)",
+                backgroundColor: "var(--cyan)",
                 transform: menuOpen ? "translateY(-4px) rotate(-45deg)" : "none",
               }}
             />
@@ -176,7 +176,7 @@ export default function Navbar({ theme, toggleTheme }: NavbarProps) {
           className="px-8 pt-10 pb-4 text-xs tracking-widest"
           style={{ color: "var(--text-dim)" }}
         >
-          <span style={{ color: "var(--green)" }}>▶</span> navigate
+          <span style={{ color: "var(--cyan)" }}>▶</span> navigate
         </p>
 
         {/* Nav links */}
@@ -197,7 +197,7 @@ export default function Navbar({ theme, toggleTheme }: NavbarProps) {
                 <button
                   onClick={() => handleNavClick(href)}
                   className="w-full py-5 text-left text-sm tracking-widest transition-colors duration-150"
-                  style={{ color: isActive ? "var(--green)" : "var(--text)" }}
+                  style={{ color: isActive ? "var(--cyan)" : "var(--text)" }}
                 >
                   <span style={{ color: "var(--text-dim)" }}>./</span>
                   {label}
@@ -212,7 +212,7 @@ export default function Navbar({ theme, toggleTheme }: NavbarProps) {
           className="px-8 mt-auto mb-10 text-xs tracking-widest"
           style={{ color: "var(--text-dim)" }}
         >
-          <span style={{ color: "var(--green)" }}>$</span> location = &quot;Melbourne, AU&quot;
+          <span style={{ color: "var(--cyan)" }}>$</span> location = &quot;Melbourne, AU&quot;
         </p>
       </div>
     </>

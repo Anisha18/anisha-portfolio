@@ -75,7 +75,7 @@ export default function Experience() {
         <span className="text-xs tracking-widest" style={{ color: "var(--text-dim)" }}>
           // 03
         </span>
-        <h2 className="text-2xl font-bold tracking-widest" style={{ color: "var(--green)" }}>
+        <h2 className="text-2xl font-bold tracking-widest" style={{ color: "var(--cyan)" }}>
           EXPERIENCE
         </h2>
         <div className="h-px flex-1" style={{ backgroundColor: "var(--bg-border)" }} />
@@ -98,8 +98,8 @@ export default function Experience() {
           className="absolute left-0 top-0 w-px transition-none"
           style={{
             height: `${lineHeight}%`,
-            background: `linear-gradient(to bottom, var(--green), var(--green-dim))`,
-            boxShadow: "0 0 8px var(--green-glow)",
+            background: `linear-gradient(to bottom, var(--cyan), var(--cyan-dim))`,
+            boxShadow: "0 0 8px var(--cyan-glow)",
           }}
         />
 
@@ -112,14 +112,14 @@ export default function Experience() {
                 className="absolute -left-8 top-5 flex h-4 w-4 items-center justify-center rounded-full md:-left-12"
                 style={{
                   backgroundColor: "var(--bg)",
-                  border: "2px solid var(--green)",
-                  boxShadow: "0 0 10px var(--green-glow)",
+                  border: "2px solid var(--cyan)",
+                  boxShadow: "0 0 10px var(--cyan-glow)",
                   transform: "translateX(-50%)",
                 }}
               >
                 <div
                   className="h-1.5 w-1.5 rounded-full"
-                  style={{ backgroundColor: "var(--green)" }}
+                  style={{ backgroundColor: "var(--cyan)" }}
                 />
               </div>
 
@@ -131,8 +131,8 @@ export default function Experience() {
                   border: "1px solid var(--bg-border)",
                 }}
                 onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.borderColor = "var(--green-dim)";
-                  (e.currentTarget as HTMLElement).style.boxShadow = "0 0 18px var(--green-glow)";
+                  (e.currentTarget as HTMLElement).style.borderColor = "var(--cyan-dim)";
+                  (e.currentTarget as HTMLElement).style.boxShadow = "0 0 18px var(--cyan-glow)";
                 }}
                 onMouseLeave={(e) => {
                   (e.currentTarget as HTMLElement).style.borderColor = "var(--bg-border)";
@@ -140,7 +140,7 @@ export default function Experience() {
                 }}
               >
                 {/* Period badge */}
-                <p className="mb-3 text-xs tracking-widest" style={{ color: "var(--green)" }}>
+                <p className="mb-3 text-xs tracking-widest" style={{ color: "var(--cyan)" }}>
                   ▶ {exp.period}
                 </p>
 

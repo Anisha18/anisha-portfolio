@@ -62,7 +62,7 @@ export default function Hero() {
       <div
         aria-hidden
         className="pointer-events-none absolute left-0 top-1/3 -z-10 h-80 w-80 rounded-full blur-3xl"
-        style={{ backgroundColor: "var(--green-glow)" }}
+        style={{ backgroundColor: "var(--cyan-glow)" }}
       />
 
       {/* Terminal prompt lines */}
@@ -71,7 +71,7 @@ export default function Hero() {
           className="term-reveal opacity-0 text-xs tracking-widest"
           style={{ color: "var(--text-dim)" }}
         >
-          <span style={{ color: "var(--text-dim)" }}>// 01</span>  <span style={{ color: "var(--green)" }}>▶</span> whoami
+          <span style={{ color: "var(--text-dim)" }}>// 01</span>  <span style={{ color: "var(--cyan)" }}>▶</span> whoami
         </p>
 
         <h1
@@ -80,14 +80,14 @@ export default function Hero() {
         >
           Anisha
           <br />
-          <span style={{ color: "var(--green)" }}>Dsouza</span>
+          <span style={{ color: "var(--cyan)" }}>Dsouza</span>
         </h1>
 
         <p
           className="term-reveal opacity-0 text-sm tracking-widest md:text-base"
           style={{ color: "var(--text-dim)" }}
         >
-          <span style={{ color: "var(--green)" }}>$</span> role ={" "}
+          <span style={{ color: "var(--cyan)" }}>$</span> role ={" "}
           <span style={{ color: "var(--text)" }}>
             &quot;{displayed}&quot;
           </span>
@@ -98,7 +98,7 @@ export default function Hero() {
           className="term-reveal opacity-0 text-xs tracking-widest"
           style={{ color: "var(--text-dim)" }}
         >
-          <span style={{ color: "var(--green)" }}>$</span> location ={" "}
+          <span style={{ color: "var(--cyan)" }}>$</span> location ={" "}
           <span style={{ color: "var(--text)" }}>&quot;Melbourne, AU&quot;</span>
         </p>
 
@@ -108,14 +108,14 @@ export default function Hero() {
             href="#projects"
             className="rounded px-5 py-2.5 text-xs font-medium tracking-widest transition-all duration-200"
             style={{
-              backgroundColor: "var(--green)",
+              backgroundColor: "var(--cyan)",
               color: "#0a0a0a",
             }}
             onMouseEnter={(e) =>
-              ((e.currentTarget as HTMLElement).style.backgroundColor = "var(--green-dim)")
+              ((e.currentTarget as HTMLElement).style.backgroundColor = "var(--cyan-dim)")
             }
             onMouseLeave={(e) =>
-              ((e.currentTarget as HTMLElement).style.backgroundColor = "var(--green)")
+              ((e.currentTarget as HTMLElement).style.backgroundColor = "var(--cyan)")
             }
           >
             ./projects
@@ -128,8 +128,8 @@ export default function Hero() {
               color: "var(--text-dim)",
             }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.borderColor = "var(--green-dim)";
-              (e.currentTarget as HTMLElement).style.color = "var(--green)";
+              (e.currentTarget as HTMLElement).style.borderColor = "var(--cyan-dim)";
+              (e.currentTarget as HTMLElement).style.color = "var(--cyan)";
             }}
             onMouseLeave={(e) => {
               (e.currentTarget as HTMLElement).style.borderColor = "var(--bg-border)";

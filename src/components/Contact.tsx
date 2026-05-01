@@ -56,7 +56,7 @@ export default function Contact() {
           <span className="text-xs tracking-widest" style={{ color: "var(--text-dim)" }}>
             // 05
           </span>
-          <h2 className="text-2xl font-bold tracking-widest" style={{ color: "var(--green)" }}>
+          <h2 className="text-2xl font-bold tracking-widest" style={{ color: "var(--cyan)" }}>
             CONTACT
           </h2>
           <div className="h-px flex-1" style={{ backgroundColor: "var(--bg-border)" }} />
@@ -66,7 +66,7 @@ export default function Contact() {
           className="term-reveal opacity-0 mb-10 text-sm tracking-wide"
           style={{ color: "var(--text-dim)" }}
         >
-          <span style={{ color: "var(--green)" }}>$</span> open to grad &amp; junior roles,
+          <span style={{ color: "var(--cyan)" }}>$</span> open to grad &amp; junior roles,
           internships, and collaborations.
         </p>
 
@@ -103,7 +103,7 @@ export default function Contact() {
                   className="shrink-0 w-20 text-xs tracking-widest"
                   style={{ color: "var(--text-dim)" }}
                 >
-                  <span style={{ color: "var(--green)" }}>$</span> {link.label}
+                  <span style={{ color: "var(--cyan)" }}>$</span> {link.label}
                 </span>
                 <span
                   className="text-sm break-all"

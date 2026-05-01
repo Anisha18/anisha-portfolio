@@ -6,9 +6,9 @@
 
 /* ── CSS Variables ─────────────────────────────────────── */
 :root {
-  --green: #00d4ff;
-  --green-dim: #00a8cc;
-  --green-glow: rgba(0, 212, 255, 0.12);
+  --cyan: #00d4ff;
+  --cyan-dim: #00a8cc;
+  --cyan-glow: rgba(0, 212, 255, 0.12);
   --bg: #00080d;
   --bg-surface: #000d14;
   --bg-border: #001a26;
@@ -18,9 +18,9 @@
 }
 
 html.light {
-  --green: #007a99;
-  --green-dim: #005c73;
-  --green-glow: rgba(0, 122, 153, 0.08);
+  --cyan: #007a99;
+  --cyan-dim: #005c73;
+  --cyan-glow: rgba(0, 122, 153, 0.08);
   --bg: #f0f8fa;
   --bg-surface: #e4f2f7;
   --bg-border: #c0dce6;
@@ -86,7 +86,7 @@ body {
   display: inline-block;
   width: 0.55em;
   height: 1em;
-  background-color: var(--green);
+  background-color: var(--cyan);
   margin-left: 3px;
   vertical-align: middle;
   animation: blink 1.1s step-end infinite;
@@ -105,11 +105,11 @@ body {
 /* ── Timeline connector line ─────────────────────────────── */
 .timeline-line {
   @apply absolute left-4 top-0 h-full w-px;
-  background: linear-gradient(to bottom, var(--green), var(--green-dim), transparent);
+  background: linear-gradient(to bottom, var(--cyan), var(--cyan-dim), transparent);
 }
 
 /* ── Scrollbar ─────────────────────────────────────────── */
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--bg-border); border-radius: 2px; }
-::-webkit-scrollbar-thumb:hover { background: var(--green-dim); }
+::-webkit-scrollbar-thumb:hover { background: var(--cyan-dim); }

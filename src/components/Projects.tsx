@@ -1,37 +1,37 @@
 import { useEffect, useRef } from "react";
 
 const TerminalPreview = ({ id }: { id: string }) => {
-  const snippets: Record<string, { lines: { text: string; green?: boolean }[] }> = {
+  const snippets: Record<string, { lines: { text: string; cyan?: boolean }[] }> = {
     "01": {
       lines: [
         { text: "$ xcodebuild -scheme Embera -sdk watchos" },
-        { text: " ✓ Build succeeded · watchOS 11", green: true },
+        { text: " ✓ Build succeeded · watchOS 11", cyan: true },
         { text: "WCSession.sendMessage(payload) → iPhone" },
-        { text: " ✓ HealthKit + WeatherKit signals synced", green: true },
+        { text: " ✓ HealthKit + WeatherKit signals synced", cyan: true },
       ],
     },
     "02": {
       lines: [
         { text: "$ flask run --host=0.0.0.0" },
-        { text: " * Running on http://0.0.0.0:5000", green: true },
+        { text: " * Running on http://0.0.0.0:5000", cyan: true },
         { text: "$ docker push 123.dkr.ecr.ap-southeast-2..." },
-        { text: " ✓ Deployed · Lambda cold start 120ms", green: true },
+        { text: " ✓ Deployed · Lambda cold start 120ms", cyan: true },
       ],
     },
     "03": {
       lines: [
         { text: "$ npm run dev" },
-        { text: " ✓ Express listening on :3001", green: true },
+        { text: " ✓ Express listening on :3001", cyan: true },
         { text: "POST /api/courses/upload  200  48ms" },
-        { text: " ✓ PDF converted · MinIO preview ready", green: true },
+        { text: " ✓ PDF converted · MinIO preview ready", cyan: true },
       ],
     },
     "04": {
       lines: [
         { text: "EXPLAIN ANALYZE SELECT fare FROM trips;" },
-        { text: " Index Scan · cost=0.00..0.42 · 50ms", green: true },
+        { text: " Index Scan · cost=0.00..0.42 · 50ms", cyan: true },
         { text: "GRANT SELECT ON trips TO analyst_role;" },
-        { text: " ✓ Row-level security applied", green: true },
+        { text: " ✓ Row-level security applied", cyan: true },
       ],
     },
   };
@@ -57,7 +57,7 @@ const TerminalPreview = ({ id }: { id: string }) => {
           <p
             key={i}
             className="truncate text-[11px] leading-relaxed"
-            style={{ color: line.green ? "var(--green)" : "var(--text-dim)" }}
+            style={{ color: line.cyan ? "var(--cyan)" : "var(--text-dim)" }}
           >
             {line.text}
           </p>
@@ -129,7 +129,7 @@ export default function Projects() {
         <span className="text-xs tracking-widest" style={{ color: "var(--text-dim)" }}>
           // 02
         </span>
-        <h2 className="text-2xl font-bold tracking-widest" style={{ color: "var(--green)" }}>
+        <h2 className="text-2xl font-bold tracking-widest" style={{ color: "var(--cyan)" }}>
           PROJECTS
         </h2>
         <div className="h-px flex-1" style={{ backgroundColor: "var(--bg-border)" }} />
@@ -142,19 +142,19 @@ export default function Projects() {
             className="term-reveal group opacity-0 overflow-hidden rounded transition-all duration-200"
             style={{
               backgroundColor: "var(--bg-surface)",
-              border: p.featured ? "1px solid var(--green-dim)" : "1px solid var(--bg-border)",
-              boxShadow: p.featured ? "0 0 28px var(--green-glow)" : "none",
+              border: p.featured ? "1px solid var(--cyan-dim)" : "1px solid var(--bg-border)",
+              boxShadow: p.featured ? "0 0 28px var(--cyan-glow)" : "none",
             }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.borderColor = "var(--green-dim)";
-              (e.currentTarget as HTMLElement).style.boxShadow = "0 0 22px var(--green-glow)";
+              (e.currentTarget as HTMLElement).style.borderColor = "var(--cyan-dim)";
+              (e.currentTarget as HTMLElement).style.boxShadow = "0 0 22px var(--cyan-glow)";
             }}
             onMouseLeave={(e) => {
               (e.currentTarget as HTMLElement).style.borderColor = p.featured
-                ? "var(--green-dim)"
+                ? "var(--cyan-dim)"
                 : "var(--bg-border)";
               (e.currentTarget as HTMLElement).style.boxShadow = p.featured
-                ? "0 0 28px var(--green-glow)"
+                ? "0 0 28px var(--cyan-glow)"
                 : "none";
             }}
           >
@@ -170,7 +170,7 @@ export default function Projects() {
                   [{p.id}]
                 </span>
                 {p.featured && (
-                  <span className="text-xs tracking-widest" style={{ color: "var(--green)" }}>
+                  <span className="text-xs tracking-widest" style={{ color: "var(--cyan)" }}>
                     ★ featured
                   </span>
                 )}
@@ -207,7 +207,7 @@ export default function Projects() {
                   className="mt-4 inline-block text-xs tracking-widest transition-colors duration-200"
                   style={{ color: "var(--text-dim)" }}
                   onMouseEnter={(e) =>
-                    ((e.currentTarget as HTMLElement).style.color = "var(--green)")
+                    ((e.currentTarget as HTMLElement).style.color = "var(--cyan)")
                   }
                   onMouseLeave={(e) =>
                     ((e.currentTarget as HTMLElement).style.color = "var(--text-dim)")

@@ -42,7 +42,7 @@ export default function Skills() {
         <span className="text-xs tracking-widest" style={{ color: "var(--text-dim)" }}>
           // 04
         </span>
-        <h2 className="text-2xl font-bold tracking-widest" style={{ color: "var(--green)" }}>
+        <h2 className="text-2xl font-bold tracking-widest" style={{ color: "var(--cyan)" }}>
           SKILLS
         </h2>
         <div className="h-px flex-1" style={{ backgroundColor: "var(--bg-border)" }} />
@@ -55,7 +55,7 @@ export default function Skills() {
               className="mb-3 text-xs tracking-widest uppercase"
               style={{ color: "var(--text-dim)" }}
             >
-              <span style={{ color: "var(--green)" }}>$</span> {group.label}
+              <span style={{ color: "var(--cyan)" }}>$</span> {group.label}
             </p>
             <div className="flex flex-wrap gap-2">
               {group.skills.map((skill) => (
@@ -68,8 +68,8 @@ export default function Skills() {
                     color: "var(--text)",
                   }}
                   onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLElement).style.borderColor = "var(--green-dim)";
-                    (e.currentTarget as HTMLElement).style.color = "var(--green)";
+                    (e.currentTarget as HTMLElement).style.borderColor = "var(--cyan-dim)";
+                    (e.currentTarget as HTMLElement).style.color = "var(--cyan)";
                   }}
                   onMouseLeave={(e) => {
                     (e.currentTarget as HTMLElement).style.borderColor = "var(--bg-border)";
