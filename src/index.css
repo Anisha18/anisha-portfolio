@@ -6,26 +6,26 @@
 
 /* ── CSS Variables ─────────────────────────────────────── */
 :root {
-  --green: #00ff9d;
-  --green-dim: #00cc7d;
-  --green-glow: rgba(0, 255, 157, 0.12);
-  --bg: #0a0a0a;
-  --bg-surface: #111111;
-  --bg-border: #1e1e1e;
-  --text: #d4dbc8;
-  --text-dim: #4a5a4a;
+  --green: #00d4ff;
+  --green-dim: #00a8cc;
+  --green-glow: rgba(0, 212, 255, 0.12);
+  --bg: #00080d;
+  --bg-surface: #000d14;
+  --bg-border: #001a26;
+  --text: #c8e8f0;
+  --text-dim: #004d66;
   --font-mono: "JetBrains Mono", "Fira Code", monospace;
 }
 
 html.light {
-  --green: #007a4d;
-  --green-dim: #005c39;
-  --green-glow: rgba(0, 122, 77, 0.08);
-  --bg: #f4f4ee;
-  --bg-surface: #eaeae4;
-  --bg-border: #d0d0c8;
-  --text: #1a1a14;
-  --text-dim: #888878;
+  --green: #007a99;
+  --green-dim: #005c73;
+  --green-glow: rgba(0, 122, 153, 0.08);
+  --bg: #f0f8fa;
+  --bg-surface: #e4f2f7;
+  --bg-border: #c0dce6;
+  --text: #001a22;
+  --text-dim: #7a9eaa;
 }
 
 /* ── Base ──────────────────────────────────────────────── */
@@ -100,6 +100,12 @@ body {
 
 .animate-termFadeIn {
   animation: termFadeIn 0.45s ease forwards;
+}
+
+/* ── Timeline connector line ─────────────────────────────── */
+.timeline-line {
+  @apply absolute left-4 top-0 h-full w-px;
+  background: linear-gradient(to bottom, var(--green), var(--green-dim), transparent);
 }
 
 /* ── Scrollbar ─────────────────────────────────────────── */
