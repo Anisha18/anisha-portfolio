@@ -15,13 +15,6 @@ const experiences = [
     location: "Melbourne, AU",
     tech: ["Node.js", "Express.js", "MongoDB", "MinIO", "REST APIs"],
   },
-  {
-    role: "Senior Data Engineer",
-    company: "LTIMindtree",
-    period: "Aug 2022 – Sep 2023",
-    location: "",
-    tech: ["Databricks", "SparkSQL", "PySpark", "Delta Lake"],
-  },
 ];
 
 export default function Experience() {
