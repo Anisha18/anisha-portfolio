@@ -1,25 +1,23 @@
 <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background gradient -->
   <defs>
-    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#0099ff;stop-opacity:1" />
-    </linearGradient>
-    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#ff006e;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#ffbe0b;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#00d4ff;stop-opacity:1" />
-    </linearGradient>
+    <style>
+      .favicon-text {
+        font-family: 'Arial', 'Helvetica', sans-serif;
+        font-weight: bold;
+        font-size: 52px;
+        letter-spacing: -2px;
+      }
+    </style>
   </defs>
   
-  <!-- Rounded square background -->
-  <rect width="100" height="100" rx="20" fill="url(#bgGradient)"/>
+  <!-- Black background -->
+  <rect width="100" height="100" fill="#000000"/>
   
-  <!-- Inner darker accent circle -->
-  <circle cx="50" cy="50" r="45" fill="none" stroke="#00a8cc" stroke-width="2" opacity="0.3"/>
+  <!-- Subtle accent circle -->
+  <circle cx="50" cy="50" r="45" fill="none" stroke="#00d4ff" stroke-width="1.5" opacity="0.2"/>
   
-  <!-- AD initials with colorful gradient -->
-  <text x="50" y="60" font-family="Arial, sans-serif" font-size="48" font-weight="bold" text-anchor="middle" fill="url(#textGradient)">
+  <!-- AD text in cyan -->
+  <text x="50" y="62" class="favicon-text" text-anchor="middle" fill="#00d4ff">
     AD
   </text>
 </svg>
