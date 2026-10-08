@@ -9,6 +9,7 @@ const skillGroups = [
   { label: "cloud & devops", skills: ["AWS", "Docker", "CI/CD", "GitHub Actions"] },
   { label: "tools", skills: ["Git", "Power BI", "Postman", "Linux", "VS Code"] },
   { label: "ios & mobile", skills: ["SwiftUI", "iOS Development", "Human-Centred Design", "Xcode"] },
+  { label: "IT Support & Systems", skills: ["Microsoft 365", "Active Directory", "Microsoft Entra ID", "Intune Device Management", "L1/L2 support"] },
   { label: "methods", skills: ["Agile Scrum", "SDLC", "Code Reviews"] },
   { label: "ai tools", skills: ["ChatGPT", "Claude", "Google Gemini"] },
 ];
